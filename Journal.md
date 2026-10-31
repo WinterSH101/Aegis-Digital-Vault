@@ -9,3 +9,6 @@ In this phase, I added custom errors to handle incorrect or missing keys. Return
 ## Phase 3
 I added try, catch, and finally to handle errors without stopping the program. The catch block only runs when an error happens, but finally runs everytime. This is useful when a program need to close a file or clean up resources, even if something goes wrong.
 <br>
+## Phase 4
+In this phase, I created an automated tests to check if the vault handles different keys correctly. Automated testing is more reliable because I don't have to check everything manually each time. I also learned that when an error is thrown, the program jumps to the catch block instead of continuing normally.
+<br>
