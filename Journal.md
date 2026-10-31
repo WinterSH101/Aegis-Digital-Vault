@@ -12,3 +12,5 @@ I added try, catch, and finally to handle errors without stopping the program. T
 ## Phase 4
 In this phase, I created an automated tests to check if the vault handles different keys correctly. Automated testing is more reliable because I don't have to check everything manually each time. I also learned that when an error is thrown, the program jumps to the catch block instead of continuing normally.
 <br>
+## Phase 5
+I tested the vault with different inputs, including empty string, numbers, null, objects, and arrays. I found that these inputs were treated as incorrect keys rather than corrupted ones. This helped me better understand how the program handles unexpected values. I kept the code simple so it would be easier to follow and debug.

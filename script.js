@@ -61,3 +61,11 @@ runTest("Correct key", accessVault("SECRET_123")==="Access Granted");
 runTest("Undefined key", testError(undefined,InvalidKeyError));
 runTest("NaN key", testError(NaN, InvalidKeyError));
 runTest("Wrong key", testError("WRONG_KEY", VaultLockedError));
+
+console.log("\n --- Manual Testing ---");
+attemptEntry("");
+attemptEntry(12345);
+attemptEntry(null);
+attemptEntry({});
+attemptEntry([]);
+attemptEntry("SECRET_123");
