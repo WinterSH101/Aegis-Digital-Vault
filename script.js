@@ -1,13 +1,25 @@
 "use strict";
 
-function accessVault(key){
-    if (key === "SECRET_123"){
-        return "Access Granted";
-    } else {
-        return "Access Denied";
+class InvalidKeyError extends Error{
+    constructor(message) {
+        super(message);
+        this.name = "InvalidKeyError"
     }
 }
+class VaultLockedError extends Error{
+    constructor(message) {
+        super(message);
+        this.name = "VaultLockedError";
+    }
+}
+function accessVault(key){
+    if (key === undefined || Number.isNaN(key)){
+        throw new InvalidKeyError("Key is missing or corrupted");
+    }
+    if (key === "SECRET_123"){
+        throw new VaultLockedError("Incorrect key provided");
+    }
+    return "Access Granted";
+}
 console.log(accessVault("SECRET_123"));
-console.log(accessVault("WRONG_KEY"))
-console.log(accessVault(""))
-console.log(accessVault(12345));
+console.log(accessVault("WRONG_KEY"));
